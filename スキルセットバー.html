@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スキルセットバー</title>
+<style>
+  .skill {
+    margin-bottom: 10px;
+  }
+
+  .skill-name {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .skill-bar {
+    height: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .skill-level {
+    height: 100%;
+    background-color: #007bff;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+
+
+  .skill-level.excellent {
+    background-color: #28a745;
+  }
+
+  .skill-level.good {
+    background-color: #ffc107;
+  }
+
+  .skill-level.average {
+    background-color: #17a2b8;
+  }
+
+  .skill-level.basic {
+    background-color: #dc3545;
+  }
+</style>
+</head>
+<body>
+
+<div class="skill">
+  <div class="skill-name">HTML</div>
+  <div class="skill-bar">
+    <div class="skill-level" style="width: 80%;"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">CSS</div>
+  <div class="skill-bar">
+    <div class="skill-level excellent" style="width: 90%;"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">JavaScript</div>
+  <div class="skill-bar">
+    <div class="skill-level good" style="width: 70%;"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">Python</div>
+  <div class="skill-bar">
+    <div class="skill-level average" style="width: 60%;"></div>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">SQL</div>
+  <div class="skill-bar">
+    <div class="skill-level basic" style="width: 50%;"></div>
+  </div>
+</div>
+
+</body>
+</html>

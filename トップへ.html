@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>トップへ戻るボタン</title>
+<style>
+#backToTopBtn {
+  display: none; 
+  position: fixed; 
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<button id="backToTopBtn" onclick="scrollToTop()">トップへ戻る</button>
+
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > window.innerHeight / 2 || document.documentElement.scrollTop > window.innerHeight / 2) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
+</script>
+
+<div style="height: 2000px;"></div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カレンダー</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  td.today {
+    background-color: #ffffcc;
+  }
+</style>
+</head>
+<body>
+
+<h2 id="currentMonth"></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>日</th>
+      <th>月</th>
+      <th>火</th>
+      <th>水</th>
+      <th>木</th>
+      <th>金</th>
+      <th>土</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; 
+var yyyy = today.getFullYear();
+
+var table = document.querySelector('table tbody');
+var daysInMonth = new Date(yyyy, mm, 0).getDate(); 
+var firstDayOfMonth = new Date(yyyy, mm - 1, 1).getDay(); 
+var date = 1;
+
+document.getElementById('currentMonth').textContent = mm + '月';
+
+for (var i = 0; i < 6; i++) { 
+  var row = document.createElement('tr');
+  for (var j = 0; j < 7; j++) { 
+    if ((i === 0 && j < firstDayOfMonth) || date > daysInMonth) {
+      row.innerHTML += '<td></td>'; 
+    } else {
+      var cell = document.createElement('td');
+      cell.textContent = date;
+      if (date === dd && mm === (today.getMonth() + 1) && yyyy === today.getFullYear()) {
+        cell.classList.add('today'); 
+      }
+      row.appendChild(cell);
+      date++;
+    }
+  }
+  table.appendChild(row);
+}
+</script>
+
+</body>
+</html>

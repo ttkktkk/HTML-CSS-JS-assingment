@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>テキストボックスの内容表示</title>
+</head>
+<body>
+
+<input type="text" id="textbox" oninput="displayText()">
+
+<p id="display"></p>
+
+<script>
+function displayText() {
+  var inputText = document.getElementById("textbox").value;
+  document.getElementById("display").textContent = inputText;
+}
+</script>
+
+</body>
+</html>

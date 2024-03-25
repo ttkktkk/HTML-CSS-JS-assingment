@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>右クリックメニュー</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
+
+    #custom-menu {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    #custom-menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #custom-menu li {
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    #custom-menu li:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="custom-menu">
+  <ul>
+    <li onclick="handleMenuClick('Option 1')">Option 1</li>
+    <li onclick="handleMenuClick('Option 2')">Option 2</li>
+    <li onclick="handleMenuClick('Option 3')">Option 3</li>
+  </ul>
+</div>
+
+<script>
+var customMenu = document.getElementById("custom-menu");
+
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+
+  var x = event.clientX;
+  var y = event.clientY;
+
+  customMenu.style.left = x + "px";
+  customMenu.style.top = y + "px";
+  customMenu.style.display = "block";
+});
+
+document.addEventListener("click", function() {
+  customMenu.style.display = "none";
+});
+
+function handleMenuClick(option) {
+  alert("Selected: " + option);
+  customMenu.style.display = "none";
+}
+</script>
+
+</body>
+</html>

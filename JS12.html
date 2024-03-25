@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文字数カウンター</title>
+</head>
+<body>
+
+<textarea id="textarea" rows="4" cols="50" oninput="countCharacters(this)"></textarea>
+<p id="character-count">文字数: 0</p>
+
+<script>
+function countCharacters(textarea) {
+  var count = textarea.value.length;
+  document.getElementById("character-count").textContent = "文字数: " + count;
+}
+</script>
+
+</body>
+</html>

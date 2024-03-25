@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ニュースレターサインアップ</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .signup-form {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .signup-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .signup-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .signup-message {
+    display: none;
+    margin-top: 20px;
+    color: #007bff;
+  }
+</style>
+</head>
+<body>
+
+<div class="signup-form">
+  <form id="newsletter-form">
+    <input type="email" name="email" placeholder="メールアドレスを入力してください" required>
+    <input type="submit" value="送信">
+  </form>
+  <div class="signup-message" id="signup-message">ありがとう、ニュースレターに登録していただきました！</div>
+</div>
+
+<script>
+document.getElementById('newsletter-form').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+
+  document.getElementById('signup-message').style.display = 'block';
+});
+</script>
+
+</body>
+</html>

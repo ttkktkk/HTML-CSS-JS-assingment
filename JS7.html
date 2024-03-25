@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ウィンドウサイズ表示</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 50px;
+  }
+</style>
+</head>
+<body>
+
+<p id="window-size"></p>
+
+<script>
+function displayWindowSize() {
+  var width = window.innerWidth;
+  var height = window.innerHeight;
+  document.getElementById("window-size").textContent = "ウィンドウの幅: " + width + "px, 高さ: " + height + "px";
+}
+
+window.addEventListener("resize", displayWindowSize);
+
+displayWindowSize();
+</script>
+
+</body>
+</html>

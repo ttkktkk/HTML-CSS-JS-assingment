@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マウスオーバーで背景色を変更する</title>
+<style>
+  .highlight {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+
+<div id="element" onmouseover="changeColor()" onmouseout="restoreColor()">
+  マウスを乗せてください
+</div>
+
+<script>
+function changeColor() {
+  document.getElementById("element").classList.add("highlight");
+}
+
+function restoreColor() {
+  document.getElementById("element").classList.remove("highlight");
+}
+</script>
+
+</body>
+</html>

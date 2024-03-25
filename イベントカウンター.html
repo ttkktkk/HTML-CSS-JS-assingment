@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリスマスまでの残り日数</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: black;
+    }
+    .container {
+      margin-top: 20%;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>クリスマスまでの残り日数</h1>
+    <p id="countdown"></p>
+  </div>
+
+  <script>
+    const christmasDate = new Date('2024-12-25T00:00:00');
+    
+    const currentDate = new Date();
+
+    const timeDiff = christmasDate - currentDate;
+    const daysUntilChristmas = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+    document.getElementById('countdown').textContent = daysUntilChristmas + "日";
+  </script>
+</body>
+</html>

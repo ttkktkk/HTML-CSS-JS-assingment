@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ドラッグ方向アイコン</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+
+  #drag-icon {
+    display: none;
+    position: fixed;
+    font-size: 50px;
+  }
+</style>
+</head>
+<body>
+
+<div id="drag-icon">➡️</div>
+
+<script>
+var dragIcon = document.getElementById("drag-icon");
+
+document.addEventListener("mousedown", function(event) {
+  var startX = event.clientX;
+  var startY = event.clientY;
+
+  document.addEventListener("mousemove", handleDragMove);
+
+  document.addEventListener("mouseup", function() {
+    dragIcon.style.display = "none";
+    document.removeEventListener("mousemove", handleDragMove);
+  });
+
+  
+  function handleDragMove(event) {
+    var endX = event.clientX;
+    var endY = event.clientY;
+
+  
+    var deltaX = endX - startX;
+    var deltaY = endY - startY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 0) {
+        dragIcon.textContent = "➡️"; 
+      } else {
+        dragIcon.textContent = "⬅️";
+      }
+    } else {
+      if (deltaY > 0) {
+        dragIcon.textContent = "⬇️"; 
+      } else {
+        dragIcon.textContent = "⬆️"; 
+      }
+    }
+
+    dragIcon.style.left = endX + "px";
+    dragIcon.style.top = endY + "px";
+    dragIcon.style.display = "block";
+  }
+});
+</script>
+
+</body>
+</html>

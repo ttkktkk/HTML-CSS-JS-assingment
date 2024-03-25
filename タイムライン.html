@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タイムライン</title>
+<style>
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+  }
+
+  .event {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  .event::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+
+  .date {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+</style>
+</head>
+<body>
+
+<ul class="timeline">
+  <li class="event">
+    <div class="date">2023年1月1日</div>
+    <div class="description">イベント1の短い説明</div>
+  </li>
+  <li class="event">
+    <div class="date">2023年4月15日</div>
+    <div class="description">イベント2の短い説明</div>
+  </li>
+  <li class="event">
+    <div class="date">2023年8月30日</div>
+    <div class="description">イベント3の短い説明</div>
+  </li>
+  <li class="event">
+    <div class="date">2023年11月20日</div>
+    <div class="description">イベント4の短い説明</div>
+  </li>
+  <li class="event">
+    <div class="date">2024年2月5日</div>
+    <div class="description">イベント5の短い説明</div>
+  </li>
+</ul>
+
+</body>
+</html>

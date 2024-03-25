@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カードフリップエフェクト</title>
+<style>
+  .card-container {
+    perspective: 1000px;
+    margin-left: 20px;
+  }
+
+  .card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+  }
+
+  .card:hover {
+    transform: rotateY(180deg);
+  }
+
+  .card .front,
+  .card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+  }
+
+  .card .front {
+    background-color: #f2f2f2;
+  }
+
+  .card .back {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    transform: rotateY(180deg);
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card">
+    <div class="front">
+      <img src="image.jpg" alt="画像">
+    </div>
+    <div class="back">
+      <p>ここに説明が表示されます。</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>透明度コントロール</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  #slider {
+    width: 200px;
+  }
+
+  #target-element {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    margin: 20px auto;
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
+</head>
+<body>
+
+<input type="range" id="slider" min="0" max="100" value="100" oninput="changeOpacity(this.value)">
+<div id="target-element"></div>
+
+<script>
+function changeOpacity(value) {
+  var opacity = value / 100;
+  document.getElementById("target-element").style.opacity = opacity;
+}
+</script>
+
+</body>
+</html>
